@@ -33,7 +33,7 @@ const HomePage = () => {
     const handleSubmitNote = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:3010/add-note`, {
+            const response = await fetch(`https://diary-notes-v1-backend.vercel.app/add-note`, {
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json',

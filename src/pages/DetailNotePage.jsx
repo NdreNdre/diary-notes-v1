@@ -154,7 +154,7 @@ const DetailNotePage = () => {
     const handleUpdateNote = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:3010/update-note/${currentNote?.id}`, {
+            const response = await fetch(`https://diary-notes-v1-backend.vercel.app/update-note/${currentNote?.id}`, {
                 method:'PUT',
                 headers:{
                     'Content-Type': 'application/json',
@@ -180,7 +180,7 @@ const DetailNotePage = () => {
 
     // const handleDeleteNote = async (id) => {
     //     try {
-    //         const response = await fetch(`http://localhost:3010/delete-note/${id}`, {
+    //         const response = await fetch(`https://diary-notes-v1-backend.vercel.app/delete-note/${id}`, {
     //             method: 'DELETE',
     //         });
 
@@ -211,7 +211,7 @@ const DetailNotePage = () => {
 
     const handleDeleteNote = async () => {
         try {
-            const response = await fetch(`http://localhost:3010/delete-note/${confirmDeleteId}`, {
+            const response = await fetch(`https://diary-notes-v1-backend.vercel.app/delete-note/${confirmDeleteId}`, {
                 method: 'DELETE',
             });
 
