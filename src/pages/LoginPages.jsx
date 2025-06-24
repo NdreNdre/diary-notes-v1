@@ -3,6 +3,9 @@ import React from 'react';
 import { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import hk1 from '..\src\assets\peek9.png';
+import hk2 from '..\src\assets\peek6.png';
+
 
 const LoginPages = () => {
 
@@ -74,8 +77,8 @@ const LoginPages = () => {
                         </button>
                     </form>
                 </div>
-                <img src="..\src\assets\peek9.png" alt="" className='peek-character w-40 h-72 absolute -bottom-16'/>               
-                <img src="..\src\assets\peek6.png" alt="" className='w-32 h-32 absolute right-0 peek-character2 -top-[88px]'/>
+                <img src={hk1} alt="" className='peek-character w-40 h-72 absolute -bottom-16'/>               
+                <img src={hk2} alt="" className='w-32 h-32 absolute right-0 peek-character2 -top-[88px]'/>
             </div>
         </div>
     );
