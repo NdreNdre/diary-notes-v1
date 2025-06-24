@@ -159,6 +159,7 @@ const DetailNotePage = () => {
                 headers:{
                     'Content-Type': 'application/json',
                 },
+                 credentials:'include',
                 body:JSON.stringify({currentNote}),
             })
 

@@ -21,7 +21,13 @@ export const GlobalContextProvider = ({ children }) => {
 
     const fetchListNotes = async () => {
         try {
-            const response = await fetch(`https://diary-notes-v1-backend.vercel.app/list-note`);
+            const response = await fetch(`https://diary-notes-v1-backend.vercel.app/list-note` , {
+                method:'GET',
+                headers:{
+                    'Content-Type': 'application/json',
+                },
+                credentials:'include',
+            });
             const result = await response.json();
             setListNotes(result.notes);
         } catch (error) {
