@@ -18,14 +18,14 @@ const HomePage = () => {
 
     const { boxAdd, setBoxAdd, contentBody, setContentBody, listNotes, setListNotes, setSelectedNote, fetchListNotes } = useGlobalContext();
 
-    // useEffect(() => {
-    //     const token = localStorage.getItem('token');
-    //     if(token == null){
-    //         navigate('/')
-    //         toast.error('Access Denied !');
-    //     }
-    //     setSelectedNote([]);
-    // },[])
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if(token == null){
+            navigate('/')
+            toast.error('Access Denied !');
+        }
+        setSelectedNote([]);
+    },[])
 
     const handleLogout = () => {
         localStorage.removeItem('token');
