@@ -9,6 +9,8 @@ import { useGlobalContext } from "../context/globalContext";
 
 import TextEditor from "../components/TextEditor";
 
+import hk4 from '../assets/hkstrpng.png'
+import hk5 from '../assets/hkpeace2.png'
 
 const HomePage = () => {
 
@@ -95,7 +97,7 @@ const HomePage = () => {
     return(
         <div className="h-full relative">
             {/* <button onClick={() => handleLogout()}>log out</button> */}
-            <img src="..\src\assets\hkstrpng.png" alt="" className='w-40 h-40 absolute bottom-20 right-0 opacity-75 lg:hidden'/> 
+            <img src={hk4} alt="" className='w-40 h-40 absolute bottom-20 right-0 opacity-75 lg:hidden'/> 
             <div className="top-section w-full bg-white/90 h-16 flex space-x-1 items-center justify-evenly px-2 absolute z-50 border-b border-pink-700 shadow shadow-black/30">
                 <div className="item flex items-center justify-center w-3/4 lg:justify-start lg:px-3 ">
                     <IoSearch className="bg-pink-100 rounded-l-full w-8 h-10 p-2"></IoSearch>
@@ -215,7 +217,7 @@ const HomePage = () => {
 
                 {/* Modal */}
                 <div className={`w-full max-w-[80%] lg:max-w-[90vw] lg:min-h-[80vh] p-3 bg-pink-100 rounded-xl shadow-2xl transform transition-all ${boxAdd ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
-                    <img src="..\src\assets\hkpeace2.png" alt="" className='w-56 h-40 absolute -top-20 -left-24'/> 
+                    <img src={hk5} alt="" className='w-56 h-40 absolute -top-20 -left-24'/> 
             
                     <div className="title w-full flex justify-center items-center py-2">
                         <h1 className="text-xl font-bold">Add Notes</h1>

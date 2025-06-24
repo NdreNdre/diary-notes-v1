@@ -4,6 +4,7 @@ import { IoSearch } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaPlus } from "react-icons/fa";
 import { useGlobalContext } from '../context/globalContext';
+import hk3 from '../assets/hklogo.png'
 
 const Navbar = () => {
 
@@ -31,7 +32,7 @@ const Navbar = () => {
         <>
             {/* Desktop Sidebar */}
             <nav className="hidden lg:flex flex-col w-60 bg-dark-dp2 bg-white/90 shadow shadow-black/30 border-r border-pink-700 text-white p-4 space-y-4">
-                <img src="..\src\assets\hklogo.png" alt="" className='w-40 h-40 opacity-75'/> 
+                <img src={hk3} alt="" className='w-40 h-40 opacity-75'/> 
                 <NavItem to="/home" icon={<CgNotes size={20} />} label="Notes" />
                 {/* <NavItem to="/Notes" icon={<GiHamburgerMenu size={20} />} label="Setting" /> */}
             </nav>
