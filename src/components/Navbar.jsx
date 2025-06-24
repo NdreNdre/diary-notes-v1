@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaPlus } from "react-icons/fa";
 import { useGlobalContext } from '../context/globalContext';
 import hk3 from '../assets/hklogo.png'
+import { RiLogoutBoxLine } from "react-icons/ri";
 
 const Navbar = () => {
 
@@ -28,12 +29,18 @@ const Navbar = () => {
         setBoxAdd(true);
     }
 
+     const handleLogout = () => {
+        localStorage.removeItem('token');
+        // navigate('/')
+    }
+
     return(     
         <>
             {/* Desktop Sidebar */}
             <nav className="hidden lg:flex flex-col w-60 bg-dark-dp2 bg-white/90 shadow shadow-black/30 border-r border-pink-700 text-white p-4 space-y-4">
                 <img src={hk3} alt="" className='w-40 h-40 opacity-75'/> 
                 <NavItem to="/home" icon={<CgNotes size={20} />} label="Notes" />
+                <button onClick={handleLogout}><NavItem to="/" icon={<RiLogoutBoxLine size={20} />} label="Logout" /></button>
                 {/* <NavItem to="/Notes" icon={<GiHamburgerMenu size={20} />} label="Setting" /> */}
             </nav>
 
@@ -41,6 +48,7 @@ const Navbar = () => {
             <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-dark-dp2 flex justify-around items-center h-20 border-t border-pink-700 z-50 bg-white/90">
                 <NavItem to="/home" icon={<CgNotes size={20} />} label="Notes" mobile />
                 {/* <NavItem to="/Notes" icon={<IoSearch size={20} />} label="Search" mobile /> */}
+                <button onClick={handleLogout}><NavItem to="/" icon={<RiLogoutBoxLine size={20} />} label="Logout" mobile/></button>
                 {/* <NavItem to="/Notes" icon={<GiHamburgerMenu size={20} />} label="Setting" mobile /> */}
             </nav>
 
