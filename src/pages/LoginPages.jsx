@@ -3,9 +3,10 @@ import React from 'react';
 import { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import hk1 from '..\src\assets\peek9.png';
-import hk2 from '..\src\assets\peek6.png';
-
+// import hk1 from '../src/assets/peek9.png';
+// import hk2 from '../src/assets/peek6.png';
+import hk1 from '../assets/peek9.png'
+import hk2 from '../assets/peek6.png'
 
 const LoginPages = () => {
 
