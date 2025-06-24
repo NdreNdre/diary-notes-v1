@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     port: 7001,
     proxy: {
-      '*': { target: 'http://localhost:3010' }
+      '*': { target: 'https://diary-notes-v1-backend.vercel.app' }
     } // change as needed
   }
 })
