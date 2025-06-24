@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    background-image: url('./assets/hk4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    margin: 0;
+}
+
+@keyframes peek {
+    0% { transform: translateX(70%); }
+    10% { transform: translateX(70%)  ; }
+    20% { transform: translateX(0)  ; }
+    30% { transform: translateX(0)  scaleX(-1); }
+    40% { transform: translateX(-70%) scaleX(-1) ; }
+    50% { transform: translateX(-70%) scaleX(-1)  }
+    60% { transform: translateX(0) scaleX(-1) ; }
+    70% { transform: translateX(0) scaleX(-1) ; }
+    80% { transform: translateX(0)  ; }
+    90% { transform: translateX(70%)  ; }
+    100% { transform: translateX(70%) ; }
+}
+
+@keyframes peek3 {
+    0% { transform: translateX(120%); }
+    10% { transform: translateX(120%)  ; }
+    15% { transform: translateX(105%)  ; }
+    20% { transform: translateX(0)  ; }
+    30% { transform: translateX(0)  scaleX(-1); }
+    40% { transform: translateX(-120%) scaleX(-1) ; }
+    50% { transform: translateX(-120%) scaleX(-1)  }
+    60% { transform: translateX(0) scaleX(-1) ; }
+    70% { transform: translateX(0) scaleX(-1) ; }
+    80% { transform: translateX(0)  ; }
+    90% { transform: translateX(120%)  ; }
+    100% { transform: translateX(120%) ; }
+}
+
+@keyframes peek2 {
+    0% { transform: translateY(0); }
+    10% { transform: translateY(0)  ; }
+    20% { transform: translateY(35%)  ; }
+    30% { transform: translateY(35%) ; }
+    40% { transform: translateY(35%)  }
+    50% { transform: translateY(35%)  }
+    60% { transform: translateY(20%) ; }
+    70% { transform: translateY(20%) ; }
+    80% { transform: translateY(20%)  ; }
+    90% { transform: translateY(0)  ; }
+    100% { transform: translateY(0) ; }
+}
+
+@keyframes scale {
+    0% { transform: scaleX(1); }
+    25% { transform: scaleX(1) ; }
+    50% { transform: scaleX(-1) ; }
+    75% { transform: scaleX(0); }
+    100% { transform: scaleX(1) ; }
+}
+
+.peek-character {
+    animation: peek3 11s ease-in-out infinite;
+    
+}
+
+.peek-character2 {
+    animation: peek2 5s ease-in-out infinite;
+   
+}
+
+.ProseMirror {
+  min-height: 150px;
+  /* optional extras */
+}
+
+@media (min-width: 1024px) {
+  .ProseMirror {
+    min-height: 300px;
+  }
+}
+
+/* For ordered lists (1. 2. 3.) */
+.ProseMirror ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem; /* same as Tailwind's pl-5 */
+}
+
+/* For unordered lists (• bullet) */
+.ProseMirror ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+
+/* Optional: remove outline on focus */
+.ProseMirror:focus {
+  outline: none;
+}
+
+.ProseMirror ol {
+  @apply list-decimal pl-5;
+}
+
+.ProseMirror ul {
+  @apply list-disc pl-5;
+}
