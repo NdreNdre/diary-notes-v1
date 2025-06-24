@@ -20,6 +20,7 @@ const LoginPages = () => {
         try {
             const response = await fetch('https://diary-notes-v1-backend.vercel.app/login', {
                 method: 'POST',
+                credentials:'include',
                 headers: {
                     'Content-Type': 'application/json',
                 },
