@@ -26,11 +26,7 @@ const AnimatedItem = ({ children, delay = 0, index, onMouseEnter, onClick }) => 
 };
 
 const AnimatedList = ({
-  items = [
-    'Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5',
-    'Item 6', 'Item 7', 'Item 8', 'Item 9', 'Item 10',
-    'Item 11', 'Item 12', 'Item 13', 'Item 14', 'Item 15'
-  ],
+  items,
   onItemSelect,
   showGradients = true,
   enableArrowNavigation = true,
@@ -177,23 +173,32 @@ const AnimatedList = ({
           scrollbarColor: "#222 #060010",
         }}
       >
-        {items.map((item, index) => (
-          <AnimatedItem
-            key={index}
-            delay={0.1}
-            index={index}
-            onMouseEnter={() => setSelectedIndex(index)}
-            onClick={(e) => handleSelectNote(e, item)}
-          >
-            <div className={`p-4 shadow shadow-pink-800/20 flex flex-col space-y-2 bg-white rounded-lg relative hover:bg-pink-200 overflow-hidden ${selectedIndex === index ? 'bg-pink-100' : ''} ${itemClassName}`}>
-              <h1 className='font-bold text-xl mt-3 lg:mt-0'>{item.title}</h1>
-              <h1 className='flex items-center justify-start space-x-1 text-sm text-[#E91E63]'><FaRegCalendarAlt></FaRegCalendarAlt><span>{formatDateToReadable(item.note_date)}</span></h1>
-              {/* <h1 className='text-sm'>Attachments : 0</h1> */}
-              <h1 className='absolute right-3 bottom-3 font-semibold'>#{item.category}</h1>
-              <p className='text-sm text-gray-500/70 px-3 font-light absolute right-0 top-0'>{formatToWIB(item.updated_at)}</p>
-            </div>
-          </AnimatedItem>
-        ))}
+        {!items || items.length === 0 ? (
+          <div className="text-center text-gray-500 py-10 bg-white rounded-xl ">
+            <p>Please insert note</p>
+          </div>
+          ) : (
+            items.map((item, index) => (
+              <AnimatedItem
+                key={index}
+                delay={0.1}
+                index={index}
+                onMouseEnter={() => setSelectedIndex(index)}
+                onClick={(e) => handleSelectNote(e, item)}
+              >
+                <div className={`p-4 shadow shadow-pink-800/20 flex flex-col space-y-2 bg-white rounded-lg relative hover:bg-pink-200 overflow-hidden ${selectedIndex === index ? 'bg-pink-100' : ''} ${itemClassName}`}>
+                  <h1 className='font-bold text-xl mt-3 lg:mt-0'>{item.title}</h1>
+                  <h1 className='flex items-center justify-start space-x-1 text-sm text-[#E91E63]'>
+                    <FaRegCalendarAlt />
+                    <span>{formatDateToReadable(item.note_date)}</span>
+                  </h1>
+                  <h1 className='absolute right-3 bottom-3 font-semibold'>#{item.category}</h1>
+                  <p className='text-sm text-gray-500/70 px-3 font-light absolute right-0 top-0'>{formatToWIB(item.updated_at)}</p>
+                </div>
+              </AnimatedItem>
+            ))
+          )}
+
       </div>
       {showGradients && (
         <>

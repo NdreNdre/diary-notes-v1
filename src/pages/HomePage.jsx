@@ -87,11 +87,21 @@ const HomePage = () => {
     const indexOfLastNote = currentPage * notesPerPage;
     const indexOfFirstNote = indexOfLastNote - notesPerPage;
     const currentNotes = filteredNotes?.slice(indexOfFirstNote, indexOfLastNote);
-    const totalPages = Math.ceil(filteredNotes?.length / notesPerPage);
+
+    const [totalPages, setTotalPages] = useState(1);
+    // const totalPages = Math.ceil(filteredNotes?.length / notesPerPage);
+
+    console.log(totalPages);
 
     useEffect(() => {
         setCurrentPage(1);
     }, [searchTerm, selectedCategory, selectedDate]);
+
+     useEffect(() => {
+        if(filteredNotes != undefined){
+            setTotalPages(Math.ceil(filteredNotes?.length / notesPerPage));
+        }
+    },[filteredNotes])
 
 
     return(
@@ -182,7 +192,7 @@ const HomePage = () => {
                             Prev
                         </button>
 
-                        {[...Array(totalPages).keys()].map(n => (
+                        { filteredNotes?.length !=0 && [...Array(totalPages).keys()].map(n => (
                             <button
                             key={n + 1}
                             onClick={() => setCurrentPage(n + 1)}
